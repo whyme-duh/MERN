@@ -1,8 +1,17 @@
-import Navbar from "../../components/Navbar/navbar";
 import background from './bg.jpg';
 import './home.css';
+import {testApi } from '../../api/api';
+import {useEffect} from 'react';
 
 const Home = () => {
+
+    useEffect(() => {
+        testApi().then((res) => {
+          console.log(res);
+        });
+      }, []);
+
+    
     return (
         <>
         <div className="container">

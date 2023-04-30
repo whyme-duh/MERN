@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar/navbar"
 
 const About =()=>{
     return <>

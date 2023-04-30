@@ -4,15 +4,16 @@ import Home from './screens/Home/home';
 import './App.css';
 import Login from './screens/Login/login,';
 import Register from './screens/Register/register';
-import About from './screens/AboutUs/aboutus';
 import Navbar from './components/Navbar/navbar';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <>
 
       <Router>
         <Navbar></Navbar>
+        <ToastContainer/>
         <Routes>
           <Route path ='/' element={<Home/>} />
           <Route path ='/login' element={<Login/>} />

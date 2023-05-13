@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './screens/Home/home';
 import './App.css';
-import Login from './screens/Login/login,';
+import Login from './screens/Login/login';
 import Register from './screens/Register/register';
 import Navbar from './components/Navbar/navbar';
 import { ToastContainer } from 'react-toastify';

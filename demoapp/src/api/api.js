@@ -10,3 +10,9 @@ const Api = axios.create({
 
 // creating route
 export const testApi = () => Api.get('/');
+
+// register route
+export const registerApi = (data) => Api.post('/user/register', data);
+
+// login route
+export const loginApi = (data) => Api.post('/user/login', data);

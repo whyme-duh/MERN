@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { registerApi } from "../../api/api";
 
 const Register = () => {
   const [fname, setFname] = useState("");
@@ -34,24 +35,44 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      axios.post("http://localhost:5000/api/user/register", {
-        fname: fname,
-        lname: lname,
-        password : pass,
-        email: email,
-        password2: pass2,
-      }).then((res) => {
-        toast.success("User registered successfully");
-      }).catch((err) => {
-        console.log(err);
-        toast.error("User registration failed" );
-      });
-      
-    } catch (error) {
-      toast.error("Error in frontend");
+    try{
+      registerApi(
+        {
+          fname: fname,
+          lname: lname,
+          password : pass,
+          email: email,
+          password2: pass2,
+        }
+      ).then((res) => {
+              toast.success("User registered successfully");
+            }).catch((err) => {
+              // console.log(err);''
+              toast.error("User registration failed" );
+            });
+    }catch(error){
+      toast.error('Registration failed!');
     }
   };
+
+  //   try {
+  //     axios.post("http://localhost:5000/api/user/register", {
+  //       fname: fname,
+  //       lname: lname,
+  //       password : pass,
+  //       email: email,
+  //       password2: pass2,
+  //     }).then((res) => {
+  //       toast.success("User registered successfully");
+  //     }).catch((err) => {
+  //       // console.log(err);''
+  //       toast.error("User registration failed" );
+  //     });
+      
+  //   } catch (error) {
+  //     toast.error("Error in frontend");
+  //   }
+  // };
 
   return (
     <div className="container w-25">

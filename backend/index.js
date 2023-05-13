@@ -21,7 +21,7 @@ app.get('/',(req, res) =>{
     res.send('helo');
 });
 
-app.use('/api/user', require('./controller/userController'));
+app.use('/user', require('./controller/userController'));
 
 //listen route
 app.listen(process.env.PORT,()=>{
